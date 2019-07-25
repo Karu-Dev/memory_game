@@ -3,6 +3,11 @@ let object
 
 let size=4;
 
+
+function clickHandler(cell){
+    if(cell.isOpen===false)
+}
+
 function genAvatars(size){
     let allAvatars=[]
     let uniqueAvatarCount=size*size/2
@@ -56,7 +61,7 @@ function drawField(){
         if(!cell.classList.contains("cell")){
             cell.classList.add("cell")
         }
-        cell.innerHTML=`<img src="https://api.adorable.io/avatars/285/${field[x].avatarIndex}.png"`
+        cell.innerHTML=`<img src="https://api.adorable.io/avatars/285/${field[x].avatarIndex}.png" height=100px width=100px>`
         if(!field[x].isOpen){
             cell.classList.add("cellHidden")
             cell.classList.remove("cellOpen")

@@ -24,11 +24,16 @@ section{
 .cell {
     width:100px;
     height: 100px;
-    background: gray;
+    background: rgb(128, 128, 128);
     border: 2px solid pink;
     border-radius: 10px;
     margin: 15px;
+    display:flex;
+    overflow: hidden;
 }
-.cellHidden{
-    opacity: 10;
+.cellHidden img{
+    opacity: 0;
+}
+.cell :hover{
+    background: rgb(180, 172, 172);
 }
