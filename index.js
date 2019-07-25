@@ -50,9 +50,10 @@ fillWithAvatars1d(field,avatars)
 function drawField(){
     let container= document.createElement("div")
     container.className="container"
+
     for(x in field){
         let cell=document.createElement("div")
-        cell.innerHTML(`<img src="https://api.adorable.io/avatars/285/${field[x].avatarIndex}.png"`)
+        cell.innerHTML=`<img src="https://api.adorable.io/avatars/285/${field[x].avatarIndex}.png"`
         if(!field[x].isOpen){
             cell.className="cellHidden"
         }else if(field[x].isOpen){
@@ -60,9 +61,22 @@ function drawField(){
         }
         container.appendChild(cell)
     }
+    const section = document.getElementById("section")
+    console.log(section)
+    section.appendChild(container)
 }
 
 
+function initGame(size) {
+    avatars = genAvatars(size)
+    field = genEmptyField1D(size)
+    fillWithAvatars1d(field,avatars);
+    drawField();
+
+
+
+}
+initGame(4)
 console.log(field)
 // function generateEmptyField(size) {
 //     let field = []
