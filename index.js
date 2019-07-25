@@ -53,11 +53,16 @@ function drawField(){
 
     for(x in field){
         let cell=document.createElement("div")
+        if(!cell.classList.contains("cell")){
+            cell.classList.add("cell")
+        }
         cell.innerHTML=`<img src="https://api.adorable.io/avatars/285/${field[x].avatarIndex}.png"`
         if(!field[x].isOpen){
-            cell.className= +" cellHidden"
+            cell.classList.add("cellHidden")
+            cell.classList.remove("cellOpen")
         }else if(field[x].isOpen){
-            cell.className=+ " cellOpen"
+            cell.classList.add("cellOpen")
+            cell.classList.remove("cellHidden")
         }
         container.appendChild(cell);
     }
@@ -65,7 +70,6 @@ function drawField(){
     console.log(section)
     section.appendChild(container)
 }
-drawField();
 
 
 function initGame(size) {
