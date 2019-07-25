@@ -50,6 +50,16 @@ fillWithAvatars1d(field,avatars)
 function drawField(){
     let container= document.createElement("div")
     container.className="container"
+    for(x in field){
+        let cell=document.createElement("div")
+        cell.innerHTML(`<img src="https://api.adorable.io/avatars/285/${field[x].avatarIndex}.png"`)
+        if(!field[x].isOpen){
+            cell.className="cellHidden"
+        }else if(field[x].isOpen){
+            cell.className="cellOpen"
+        }
+        container.appendChild(cell)
+    }
 }
 
 
