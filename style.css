@@ -29,3 +29,6 @@ section{
     border-radius: 10px;
     margin: 15px;
 }
+.cellHidden{
+    opacity: 10;
+}
